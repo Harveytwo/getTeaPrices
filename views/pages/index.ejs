@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<main>
+    <div class="jumbotron">
+        <div>
+            <p>输入茶叶的 id(多个使用英文 , 隔开)</p>
+            <textarea id="ids" name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button id="submit">提交</button>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+<script>
+    document.querySelector('#submit').addEventListener("click", (e) => {
+        var ids = document.querySelector('#ids').value
+        if (!ids) {
+            alert('请输入茶叶 id')
+        } else {
+            window.location.href = '/price_list?id=' + ids
+        }
+    })
+</script>
+
+</body>
+</html>
